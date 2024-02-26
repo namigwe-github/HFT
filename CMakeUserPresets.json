@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "make",
+      "displayName": "Unix Makefiles",
+      "description": "Default build using Makefile generator",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "environment": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+        "CMAKE_C_COMPILER": "/usr/bin/aarch64-linux-gnu-gcc-13",
+        "CMAKE_CXX_COMPILER": "/usr/bin/aarch64-linux-gnu-g++-13",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CXXFLAGS": "-Wall"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug",
+      "displayName": "Debug",
+      "configurePreset": "make",
+      "description": "Default debug build"
+    }
+  ]
+}
